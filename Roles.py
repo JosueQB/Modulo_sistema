@@ -1,5 +1,37 @@
+class Profesor: 
+    def __init__(self,id2,nomb,cedul,telefon,materi,carrer):
+        self.__id = id2
+        self.nombre = nomb
+        self.cedula = cedul
+        self.telefono = telefon
+        self.materia = materi
+        self.carrera= carrer
+    @property
+    def id(self):
+        return self.__id
+
+    def getProfesor(self):
+        return  [str(self.id),self.nombre,self.cedula,self.telefono,self.materia,self.carrera]
+    
+    
+class Estudiante: 
+    def __init__(self,id,nombre,cedula,materia,calificaiones,Asistencia):
+        self.__id = id
+        self.nombreE = nombre
+        self.cedulaE = cedula
+        self.materiaE=materia
+        self.cal = calificaiones
+        self.asis = Asistencia
+       
+    @property
+    def id(self):
+        return self.__id
+
+    def getEstudiante(self):
+        return  [str(self.id),self.nombreE,self.cedulaE,self.materiaE,self.cal,self.asis]
+
 class Rol():
-    def __init__(self):
+    def __init__(self):        
         self.lista=[]
         self.nota=[]
         self.mat=["Ingenieria de Software","Programacion Orientada a Objetos","Base de Datos"]
@@ -8,9 +40,9 @@ class Rol():
         self.dic={}
         
     #ADMINISTRADOR        
-    def Adminañadir(self,dato):  
+    def Adminañadir(self,nombre,cedula,materia,calificaiones,Asistencia):  
         if self.longitud < self.size:
-            self.lista += [dato]
+            self.lista += [nombre,cedula,materia,calificaiones,Asistencia]
             self.longitud +=1
             return True
         else:
@@ -38,8 +70,8 @@ class Rol():
         
     def Adminmostrar(self):
         print("{}{:8}".format("","Estudiantes"))
-        for pos,ele in enumerate(self.lista):
-            print("[{:8}] ".format(ele))
+        print("[{:8}] ".format(self.nombreE))
+            
             
     def Admineliminar (self,dato):
         res=self.AdminBuscar(dato)
@@ -70,14 +102,9 @@ class Rol():
         for pos,ele in enumerate(self.lista):
             print("[{:8}]  {:5}".format(ele,pos))
     
-    #DOCENTE
+
     def DocenteMostrar(self):
         print("{:5}{:19} {:19}{}".format("","Estudiantes","Calificacion", "Materia"))
-        for pos,ele1 in enumerate(self.lista):
-            for pos,ele2 in enumerate(self.dic):
-                for pos,ele3 in enumerate(self.mat):
-                    print("{:5} {:22}{:22}{}".format("",ele1,ele2,ele3))
-                    
                     
     def DocenteMat(self):
         print("{:5}{}".format("","Mis Materia"))
@@ -98,3 +125,4 @@ class Rol():
         for ele in self.nota:
             self.dic[ele]=ele     
         print(self.dic)
+        
