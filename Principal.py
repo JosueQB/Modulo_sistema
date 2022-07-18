@@ -16,7 +16,6 @@ class Menu:
         return opc
 Usu=Rol()
 
-
 opc = ""
 while opc != "4":
     os.system("cls")
