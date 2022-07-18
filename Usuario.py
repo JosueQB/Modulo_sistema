@@ -34,6 +34,8 @@ class usuario():
                 print("{}".format("!!!!!!!solo numeros"))
         return valor
     
+
+    
     def MostrarAdmin(self):
         print("{}{:5}{}".format("ADMIN","","rquijijeb2@unemi.edu.ec"))       
     
@@ -48,13 +50,15 @@ class usuario():
             nom=(input("Ingrese su Usuario:"))
             if nom == UsuA:
                 return nom
-            
+            else:
+                print("Usuario Invalido") 
     
           
     
                        
     
-        
+
+            
 class Profesor(): 
     def __init__(self,id2,nomb,cedul,telefon,materi,carrer):
         self.__id = id2
@@ -70,13 +74,14 @@ class Profesor():
     def getProfesor(self):
         return  [str(self.id),self.nombre,self.cedula,self.telefono,self.materia,self.carrera]
     
-    def IngresoDocente(self,UsuD="dvera"):
+    def IngresoDocente(self,UsuD="Dvera"):
         Usu=""
         while Usu != UsuD:
             nom=(input("Ingrese su Usuario:"))
             if nom == UsuD:
                 return nom  
-             
+            else:
+                print("Usuario Invalido") 
     def mostrarDocente(self): 
         var=self.getProfesor()
         print("{:4}{:19}{:18}{}".format("","DOCENTE","MATERIA","CARRERA"))
@@ -93,9 +98,10 @@ class Profesor():
             Elementos = (input("Clave de Ingreso: "))
             if Elementos==clave:
                 print("ingreso")
-                 
-                 
-                 
+                
+            else:
+                print("Clave Invalida")     
+                
 class Estudiante(): 
     def __init__(self,id,nombre,cedula,materia,calificaiones,Asistencia):
         self.__id = id
@@ -105,7 +111,7 @@ class Estudiante():
         self.cal = calificaiones
         self.asis = Asistencia
         self.lista=[]
-       
+    
     @property
     def id(self):
         return self.__id
@@ -118,36 +124,25 @@ class Estudiante():
         ClaveE="Estu2022"
         return ClaveE   
     
-          
+        
     def IngresoEstudiante(self,UsuE="rquijije"):
         Usu=""
         while Usu != UsuE:
             nom=(input("Ingrese su Usuario:"))
             if nom == UsuE:
                 return nom
-            
+            else:
+                print("Usuario Invalido") 
+                
     def mostrarNotas(self): 
         var=self.getEstudiante()
         print("{:4}{:19}{:18}{}".format("","ESTUDIANTE","NOTA","ASISTENCIA"))
-        print("{:5}{:19}{:19}{}".format("",var[1],var[4],var[3]))       
+        print("{:5}{:19}{:19}{}".format("",var[1],var[4],var[5]))       
     
     def mostrar(self): 
         var=self.getEstudiante()
         print("{:4}{:19}{}".format("","ESTUDIANTE","MATERIA"))
         print("{:5}{:19}{}".format("",var[1],var[3]))       
     
-    
-# un=usuario("Rolando Josue","0941483018","0961329155","jquijije@gmail.com")
-# p=un.CUsuarioA()
-# un.MostrarEstudiante()
-# un.IngresoAdmin()
-# un.ingreso(p)
-# n=un.registra()
-# print(n)
-# n2=un.registraCed()
-# print(n2)
-un=Estudiante(1,"Josue","0941483018","Poo","15","100")
-un.getEstudiante()
-# print("{:4}{:19}{:18}{}".format("","ESTUDIANTE","NOTA","ASISTENCIA"))
-un.mostrar()
+
 
