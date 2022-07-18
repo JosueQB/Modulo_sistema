@@ -1,34 +1,3 @@
-class Profesor: 
-    def __init__(self,id2,nomb,cedul,telefon,materi,carrer):
-        self.__id = id2
-        self.nombre = nomb
-        self.cedula = cedul
-        self.telefono = telefon
-        self.materia = materi
-        self.carrera= carrer
-    @property
-    def id(self):
-        return self.__id
-
-    def getProfesor(self):
-        return  [str(self.id),self.nombre,self.cedula,self.telefono,self.materia,self.carrera]
-    
-    
-class Estudiante: 
-    def __init__(self,id,nombre,cedula,materia,calificaiones,Asistencia):
-        self.__id = id
-        self.nombreE = nombre
-        self.cedulaE = cedula
-        self.materiaE=materia
-        self.cal = calificaiones
-        self.asis = Asistencia
-       
-    @property
-    def id(self):
-        return self.__id
-
-    def getEstudiante(self):
-        return  [str(self.id),self.nombreE,self.cedulaE,self.materiaE,self.cal,self.asis]
 
 class Rol():
     def __init__(self):        
@@ -39,7 +8,7 @@ class Rol():
         self.size=50
         self.dic={}
         
-    #ADMINISTRADOR        
+           
     def Adminañadir(self,nombre,cedula,materia,calificaiones,Asistencia):  
         if self.longitud < self.size:
             self.lista += [nombre,cedula,materia,calificaiones,Asistencia]
@@ -96,7 +65,7 @@ class Rol():
         else:
             return -1 
         
-    #ESTUDIANTE
+ 
     def EstuMostrar(self):
         print("{:3}{:9} {}".format("","Estudiantes","Posicion"))
         for pos,ele in enumerate(self.lista):
